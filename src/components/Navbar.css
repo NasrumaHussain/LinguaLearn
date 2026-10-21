@@ -1,0 +1,42 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 5%;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(235, 224, 244);
+}
+
+.brand {
+  background: none;
+  border: none;
+  color: rgb(65, 43, 95);
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.brand span {
+  color: rgb(210, 115, 160);
+}
+
+.navbar-tagline {
+  color: rgb(105, 96, 117);
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 16px 5%;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .navbar-tagline {
+    font-size: 12px;
+  }
+}

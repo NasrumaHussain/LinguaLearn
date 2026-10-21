@@ -1,0 +1,124 @@
+
+.vocabulary-page {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.vocabulary-back {
+  display: block;
+  padding: 10px 16px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(92, 67, 130);
+  border: 1px solid rgb(220, 208, 240);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.vocabulary-label {
+  margin-top: 35px;
+  color: rgb(151, 65, 112);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.vocabulary-page > h1 {
+  color: rgb(65, 43, 95);
+  font-size: 36px;
+}
+
+.vocabulary-intro {
+  color: rgb(105, 96, 117);
+  line-height: 1.6;
+}
+
+.vocabulary-card {
+  max-width: 520px;
+  margin: 30px auto;
+  padding: 32px 24px;
+  background: linear-gradient(
+    135deg,
+    rgb(243, 237, 255),
+    rgb(255, 228, 238)
+  );
+  border: 1px solid rgb(226, 217, 240);
+  border-radius: 20px;
+}
+
+.word-counter {
+  color: rgb(105, 96, 117);
+  font-size: 14px;
+}
+
+.vocabulary-card > h2 {
+  color: rgb(65, 43, 95);
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.pronunciation {
+  color: rgb(121, 82, 179);
+  font-size: 18px;
+}
+
+.meaning-box {
+  margin: 25px 0;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+}
+
+.meaning-box span {
+  color: rgb(151, 65, 112);
+  font-size: 13px;
+}
+
+.meaning-box h3 {
+  color: rgb(53, 35, 79);
+  margin-bottom: 0;
+}
+
+.word-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.word-navigation button {
+  padding: 11px 16px;
+  background-color: rgb(121, 82, 179);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.word-navigation button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .vocabulary-page {
+    padding: 20px 14px;
+  }
+
+  .vocabulary-card > h2 {
+    font-size: 30px;
+  }
+}
+
+.start-quiz-button {
+  display: block;
+  margin: 20px auto 0;
+  margin-top: 20px;
+  padding: 12px 18px;
+  background-color: rgb(210, 115, 160);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}

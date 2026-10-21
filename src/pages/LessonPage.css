@@ -1,0 +1,125 @@
+
+.lesson-page {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  text-align: left;
+}
+
+.back-button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(92, 67, 130);
+  border: 1px solid rgb(220, 208, 240);
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lesson-header {
+  margin: 45px 0 35px;
+  padding: 35px;
+  border-radius: 20px;
+  background: linear-gradient(
+  135deg,
+  rgb(243, 237, 255),
+  rgb(255, 228, 238)
+);
+}
+
+.lesson-label {
+  color: rgb(121, 82, 179);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.lesson-header h1 {
+  color: rgb(65, 43, 95);
+  font-size: 38px;
+  margin: 12px 0;
+}
+
+.lesson-header > p:last-child {
+  color: rgb(92, 81, 107);
+  line-height: 1.6;
+}
+
+.lesson-section-title {
+  color: rgb(53, 35, 79);
+  margin-bottom: 20px;
+}
+
+.lesson-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.lesson-card {
+  padding: 24px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(53, 35, 79);
+  border: 1px solid rgb(226, 217, 240);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(53, 35, 79, 0.06);
+}
+
+.lesson-number {
+  display: inline-block;
+  background-color: rgb(255, 228, 238);
+  color: rgb(151, 65, 112);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.lesson-card h3 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.lesson-card p {
+  color: rgb(105, 96, 117);
+  line-height: 1.6;
+  min-height: 48px;
+}
+
+.lesson-card:hover {
+  border-color: rgb(245, 180, 208);
+  box-shadow: 0 8px 20px rgba(151, 65, 112, 0.12);
+  transform: translateY(-4px);
+  transition: 0.2s ease;
+}
+
+.start-button {
+  margin-top: 12px;
+  padding: 11px 14px;
+  width: 100%;
+  background-color: rgb(121, 82, 179);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: rgb(96, 61, 150);
+}
+
+@media (max-width: 600px) {
+  .lesson-page {
+    padding: 20px 14px;
+  }
+
+  .lesson-header {
+    padding: 24px;
+    margin-top: 30px;
+    
+    
+  }
+
+  .lesson-header h1 {
+    font-size: 30px;
+  }
+}

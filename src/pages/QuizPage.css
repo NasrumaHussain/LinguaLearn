@@ -1,0 +1,89 @@
+
+.quiz-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.quiz-back {
+  display: block;
+  padding: 10px 16px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(92, 67, 130);
+  border: 1px solid rgb(220, 208, 240);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quiz-label {
+  margin-top: 35px;
+  color: rgb(151, 65, 112);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.quiz-page > h1 {
+  color: rgb(65, 43, 95);
+  font-size: 36px;
+}
+
+.quiz-card {
+  max-width: 520px;
+  margin: 30px auto;
+  padding: 30px 24px;
+  background: linear-gradient(
+    135deg,
+    rgb(243, 237, 255),
+    rgb(255, 228, 238)
+  );
+  border: 1px solid rgb(226, 217, 240);
+  border-radius: 20px;
+}
+
+.quiz-card > h2 {
+  color: rgb(65, 43, 95);
+  line-height: 1.5;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.quiz-option {
+  padding: 14px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(53, 35, 79);
+  border: 1px solid rgb(220, 208, 240);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quiz-option.selected {
+  background-color: rgb(255, 228, 238);
+  border: 2px solid rgb(210, 115, 160);
+}
+
+.quiz-submit,
+.quiz-card > button {
+  padding: 12px 20px;
+  background-color: rgb(121, 82, 179);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.quiz-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .quiz-page {
+    padding: 20px 14px;
+  }
+}
