@@ -102,32 +102,40 @@ function QuizPage({ language, lesson, onBack }) {
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [finished, setFinished] = useState(false);
-
+  const [showFeedback, setShowFeedback] = useState(false);
   function checkAnswer() {
-    if (!selectedAnswer) return;
+    if (!selectedAnswer || showFeedback) return;
 
     if (selectedAnswer === quiz[currentQuestion].answer) {
       setScore((previousScore) => previousScore + 1);
     }
+      setShowFeedback(true);
+    }
 
+     function nextQuestion(){
     if (currentQuestion === quiz.length - 1) {
       setFinished(true);
     } else {
       setCurrentQuestion((previousQuestion) => previousQuestion + 1);
       setSelectedAnswer("");
+       setShowFeedback(false);
     }
   }
+    
 
   function restartQuiz() {
     setCurrentQuestion(0);
     setScore(0);
     setSelectedAnswer("");
     setFinished(false);
+    setShowFeedback(false);
   }
 
-  return (
+ 
+     
+return (
     <div className="quiz-page">
-      <button className="quiz-back" onClick={onBack}>
+      <button type="button" className="quiz-back" onClick={onBack}>
         ← Back to Lesson
       </button>
 
@@ -135,11 +143,26 @@ function QuizPage({ language, lesson, onBack }) {
       <h1>{lesson} Quiz</h1>
 
       {finished ? (
-        <div className="quiz-card">
+        <div className="quiz-card quiz-results" aria-live="polite">
           <h2>Quiz Completed!</h2>
-          <p>You scored {score} out of {quiz.length}.</p>
-          <button onClick={restartQuiz}>Try Again</button>
+
+          <p className="quiz-score">
+            {score} / {quiz.length}
+          </p>
+
+          <h3>{Math.round((score / quiz.length) * 100)}%</h3>
+
+          <p>
+            {score === quiz.length
+              ? "Perfect score! Excellent work!"
+              : score >= 2
+              ? "Great effort! Keep practising."
+              : "Keep learning. You will improve!"}
+          </p>
+
+          <button type="button" onClick={restartQuiz}>Try Again ↻</button>
         </div>
+
       ) : (
         <div className="quiz-card">
           <p>Question {currentQuestion + 1} of {quiz.length}</p>
@@ -147,13 +170,18 @@ function QuizPage({ language, lesson, onBack }) {
 
           <div className="quiz-options">
             {quiz[currentQuestion].options.map((option) => (
-              <button
+              <button type="button"
                 key={option}
-                className={
-                  selectedAnswer === option
-                    ? "quiz-option selected"
-                    : "quiz-option"
-                }
+                className={`quiz-option ${
+                  showFeedback && option === quiz[currentQuestion].answer
+                    ? "correct"
+                    : showFeedback && option === selectedAnswer
+                    ? "incorrect"
+                    : selectedAnswer === option
+                    ? "selected"
+                    : ""
+                }`}
+                disabled={showFeedback}
                 onClick={() => setSelectedAnswer(option)}
               >
                 {option}
@@ -161,14 +189,24 @@ function QuizPage({ language, lesson, onBack }) {
             ))}
           </div>
 
-          <button
+          {showFeedback && (
+            <p className="quiz-feedback" role="status" aria-live="polite">
+              {selectedAnswer === quiz[currentQuestion].answer
+                ? "Correct! Well done!"
+                : `Not quite! The correct answer is: ${quiz[currentQuestion].answer}`}
+            </p>
+          )}
+
+          <button type="button"
             className="quiz-submit"
             disabled={!selectedAnswer}
-            onClick={checkAnswer}
+            onClick={showFeedback ? nextQuestion : checkAnswer}
           >
-            {currentQuestion === quiz.length - 1
-              ? "Finish Quiz"
-              : "Next Question"}
+            {showFeedback
+              ? currentQuestion === quiz.length - 1
+                ? "View Results"
+                : "Next Question →"
+              : "Check Answer"}
           </button>
         </div>
       )}
