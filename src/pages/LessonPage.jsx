@@ -2,13 +2,14 @@ import { useState } from "react";
 import "./LessonPage.css"
 import VocabularyPage from "./VocabularyPage";
 
-function LessonPage({language, onBack, onLessonComplete}){
+function LessonPage({language, onBack, onLessonComplete, savedWords, onToggleSave, completedLessons = [] }){
   const lessons = [
     { 
       title: "Greetings", 
       description: "Learn how to say hello and goodbye.",
       number:"01",
     },
+    
     {
       title: "Basic Words",
       description: "Learn common words and expressions.",
@@ -30,13 +31,16 @@ function LessonPage({language, onBack, onLessonComplete}){
       lesson={selectedLesson}
       onBack={() => setSelectedLesson(null)}
       onComplete={() => onLessonComplete(selectedLesson)}
+      isLessonComplete={completedLessons.includes(selectedLesson)}
+      savedWords={savedWords}
+      onToggleSave={onToggleSave}
     />
   );
 }
 
   return (
     <div className="lesson-page">
-      <button className="back-button" onClick={onBack}>
+      <button  type="button" className="back-button" onClick={onBack}>
         ← All Languages
       </button>
 
@@ -53,8 +57,11 @@ function LessonPage({language, onBack, onLessonComplete}){
           <div className="lesson-card" key={lesson.number}>
             <span className="lesson-number">{lesson.number}</span>
             <h3>{lesson.title}</h3>
+             {completedLessons.includes(lesson.title) && (
+              <p className="lesson-completed" role="status">Completed ✓</p>
+            )}
             <p>{lesson.description}</p>
-            <button
+            <button type="button"
               className="start-button"
               onClick={() => setSelectedLesson(lesson.title)}
             >
