@@ -128,9 +128,8 @@ function App() {
           {selectedLanguage && (
             <p> You selected {selectedLanguage}</p>
           )}
-      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
