@@ -1,0 +1,85 @@
+.saved-words-page {
+  padding: 40px 8%;
+}
+
+.saved-back-button {
+  background: transparent;
+  border: none;
+  color: rgb(121, 82, 179);
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.saved-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.saved-header > p:first-child {
+  color: rgb(121, 82, 179);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.saved-header h1 {
+  color: rgb(70, 48, 105);
+  margin: 12px 0;
+}
+
+.empty-saved {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgb(243, 237, 255);
+  border-radius: 16px;
+}
+
+.saved-words-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.saved-word-card {
+  background: rgb(255, 255, 255);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgb(230, 220, 245);
+  box-shadow: 0 4px 15px rgba(70, 48, 105, 0.07);
+}
+
+.saved-word-card > p:first-child {
+  color: rgb(121, 82, 179);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.saved-word-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.saved-word-card h3 {
+  color: rgb(130, 115, 145);
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.saved-meaning {
+  margin: 15px 0;
+}
+
+.saved-word-card button {
+  background: rgb(255, 228, 238);
+  color: rgb(170, 65, 115);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 15px;
+  cursor: pointer;
+}
+.saved-back-button:focus-visible,
+.saved-word-card button:focus-visible {
+  outline: 3px solid rgb(121, 82, 179);
+  outline-offset: 3px;
+}
