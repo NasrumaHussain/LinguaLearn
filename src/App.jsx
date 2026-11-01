@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import ProgressCard from "./components/ProgressCard";
 import SavedWordsPage from "./pages/SavedWordsPage";
 
-function App() {
+function App() { 
   const languages = [
     {name: "Korean", native: "한국어"},
     {name: "Bangla", native: "বাংলা"},
