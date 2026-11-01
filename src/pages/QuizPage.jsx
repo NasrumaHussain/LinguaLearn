@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import "./QuizPage.css";
-
+ 
 function QuizPage({ language, lesson, onBack }) {
   const questions = {
     Korean: {
