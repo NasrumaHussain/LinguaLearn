@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./VocabularyPage.css";
 import QuizPage from "./QuizPage";
 
-function VocabularyPage({ language, lesson, onBack, onComplete}) {
+function VocabularyPage({ language, lesson, onBack, onComplete, isLessonComplete = false, savedWords, onToggleSave}) {
    const vocabulary = {
     Korean: {
       Greetings: [
@@ -100,6 +100,12 @@ function VocabularyPage({ language, lesson, onBack, onComplete}) {
   const [currentWord, setCurrentWord] = useState(0);
   const word = words[currentWord];
 
+   const isSaved = savedWords.some(
+      (item) => 
+        item.word === word.word &&
+        item.language === language &&
+        item.lesson === lesson 
+    );
   if (showQuiz) {
   return (
     <QuizPage
@@ -112,7 +118,7 @@ function VocabularyPage({ language, lesson, onBack, onComplete}) {
 
   return (
     <div className="vocabulary-page">
-      <button className="vocabulary-back" onClick={onBack}>
+      <button type="button" className="vocabulary-back" onClick={onBack}>
         ← Back to Lessons
       </button>
 
@@ -130,20 +136,29 @@ function VocabularyPage({ language, lesson, onBack, onComplete}) {
         <h2>{word.word}</h2>
         <p className="pronunciation">{word.pronunciation}</p>
 
+        <button type="button" className="save-word-button" aria-pressed={isSaved}
+        onClick={() => onToggleSave({
+          ...word, language, lesson
+            })
+          }
+        >
+          {isSaved ? "♥ Saved" : "♡ Save Word"}
+        </button>
+
         <div className="meaning-box">
           <span>Meaning</span>
           <h3>{word.meaning}</h3>
         </div>
 
         <div className="word-navigation">
-          <button
+          <button type="button"
             disabled={currentWord === 0}
             onClick={() => setCurrentWord(currentWord - 1)}
           >
             Previous
           </button>
 
-          <button
+          <button type="button"
             onClick={() =>
               setCurrentWord((currentWord + 1) % words.length)
             }
@@ -153,19 +168,22 @@ function VocabularyPage({ language, lesson, onBack, onComplete}) {
         </div>
 
             <button
+              type="button"
               className="start-quiz-button"
               onClick={() => setShowQuiz(true)}>
               Take Vocabulary Quiz →
             </button>
 
             <button
+              type="button"
               className="start-quiz-button"
+              disabled={isLessonComplete}
               onClick={() => {
-              onComplete();
-              onBack();}}>
-              Mark Lesson Complete ✓
+                onComplete();
+                onBack();
+              }}>
+              {isLessonComplete ? "Lesson Completed ✓" : "Mark Lesson Complete ✓"}
             </button>
-        
       </div>
     </div>
   );
