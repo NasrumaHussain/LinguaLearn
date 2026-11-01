@@ -122,3 +122,27 @@
   border-radius: 9px;
   cursor: pointer;
 }
+.save-word-button {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  border: 1px solid rgb(210, 115, 160);
+  border-radius: 20px;
+  background: rgb(255, 228, 238);
+  color: rgb(170, 65, 115);
+  cursor: pointer;
+  font-weight: 600;
+}
+.vocabulary-back:focus-visible,
+.save-word-button:focus-visible,
+.start-quiz-button:focus-visible,
+.word-navigation button:focus-visible {
+  outline: 3px solid rgb(121, 82, 179);
+  outline-offset: 3px;
+}
+
+.start-quiz-button:disabled {
+  background-color: rgb(121, 82, 179);
+  cursor: default;
+  opacity: 0.75;
+}
