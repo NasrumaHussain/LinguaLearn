@@ -1,148 +1,323 @@
 
 .vocabulary-page {
-  max-width: 850px;
+  width: 100%;
+  max-width: 950px;
   margin: 0 auto;
-  padding: 30px 24px;
+  padding: 35px 24px 60px;
   text-align: center;
 }
 
+/* Back button */
 .vocabulary-back {
   display: block;
   padding: 10px 16px;
-  background-color: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   color: rgb(92, 67, 130);
-  border: 1px solid rgb(220, 208, 240);
+  border: 1px solid rgb(225, 215, 240);
   border-radius: 10px;
   cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
 }
 
+.vocabulary-back:hover {
+  background: rgb(240, 233, 250);
+}
+
+/* Page heading */
 .vocabulary-label {
-  margin-top: 35px;
-  color: rgb(151, 65, 112);
-  font-size: 12px;
-  font-weight: bold;
+  margin-top: 38px;
+  color: rgb(151, 83, 139);
+  font-size: 11px;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
 .vocabulary-page > h1 {
-  color: rgb(65, 43, 95);
-  font-size: 36px;
+  color: rgb(62, 43, 95);
+  font-size: 38px;
+  margin: 12px 0;
 }
 
 .vocabulary-intro {
-  color: rgb(105, 96, 117);
-  line-height: 1.6;
+  color: rgb(119, 109, 134);
+  font-size: 15px;
+  line-height: 1.7;
 }
 
+/* Vocabulary card */
 .vocabulary-card {
-  max-width: 520px;
-  margin: 30px auto;
-  padding: 32px 24px;
+  width: 100%;
+  max-width: 570px;
+  margin: 35px auto;
+  padding: 38px 32px;
   background: linear-gradient(
-    135deg,
-    rgb(243, 237, 255),
-    rgb(255, 228, 238)
+    145deg,
+    rgb(246, 241, 253),
+    rgb(255, 241, 247)
   );
-  border: 1px solid rgb(226, 217, 240);
-  border-radius: 20px;
+  border: 1px solid rgb(229, 219, 242);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(80, 55, 120, 0.07);
 }
 
 .word-counter {
-  color: rgb(105, 96, 117);
-  font-size: 14px;
+  color: rgb(126, 111, 146);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 22px;
 }
 
 .vocabulary-card > h2 {
-  color: rgb(65, 43, 95);
-  font-size: 38px;
-  margin-bottom: 8px;
+  color: rgb(62, 43, 95);
+  font-size: 44px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.4;
 }
 
 .pronunciation {
-  color: rgb(121, 82, 179);
-  font-size: 18px;
+  color: rgb(126, 86, 174);
+  font-size: 19px;
+  margin: 8px 0 20px;
 }
 
+/* Save word */
+.save-word-button {
+  display: block;
+  margin: 18px auto 28px;
+  padding: 11px 23px;
+  border: 1px solid rgb(218, 132, 174);
+  border-radius: 25px;
+  background: rgb(255, 255, 255);
+  color: rgb(170, 65, 115);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.save-word-button:hover {
+  background: rgb(255, 229, 241);
+  transform: translateY(-2px);
+}
+
+/* Meaning section */
 .meaning-box {
   margin: 25px 0;
-  padding: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
+  padding: 23px 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(225, 215, 240, 0.65);
+  border-radius: 16px;
 }
 
 .meaning-box span {
-  color: rgb(151, 65, 112);
-  font-size: 13px;
+  color: rgb(151, 83, 139);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .meaning-box h3 {
-  color: rgb(53, 35, 79);
-  margin-bottom: 0;
+  color: rgb(62, 43, 95);
+  font-size: 23px;
+  margin: 15px 0 0;
 }
 
+/* Previous and next */
 .word-navigation {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 28px;
 }
 
 .word-navigation button {
-  padding: 11px 16px;
-  background-color: rgb(121, 82, 179);
+  min-width: 115px;
+  padding: 12px 18px;
+  background: rgb(112, 76, 170);
   color: rgb(255, 255, 255);
   border: none;
-  border-radius: 9px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.word-navigation button:hover:not(:disabled) {
+  background: rgb(88, 59, 137);
+  transform: translateY(-2px);
 }
 
 .word-navigation button:disabled {
-  opacity: 0.45;
+  background: rgb(198, 181, 220);
+  opacity: 0.65;
   cursor: not-allowed;
 }
 
-@media (max-width: 600px) {
-  .vocabulary-page {
-    padding: 20px 14px;
-  }
-
-  .vocabulary-card > h2 {
-    font-size: 30px;
-  }
+/* Quiz and completion buttons */
+.start-quiz-button,
+.lesson-complete-button {
+  display: block;
+  width: 100%;
+  max-width: 290px;
+  margin: 18px auto 0;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
 }
 
 .start-quiz-button {
-  display: block;
-  margin: 20px auto 0;
-  margin-top: 20px;
-  padding: 12px 18px;
-  background-color: rgb(210, 115, 160);
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 9px;
-  cursor: pointer;
+  background: rgb(112, 76, 170);
 }
-.save-word-button {
-  display: block;
-  margin: 15px auto;
-  padding: 10px 20px;
-  border: 1px solid rgb(210, 115, 160);
-  border-radius: 20px;
-  background: rgb(255, 228, 238);
-  color: rgb(170, 65, 115);
-  cursor: pointer;
-  font-weight: 600;
+
+.start-quiz-button:hover {
+  background: rgb(88, 59, 137);
 }
+
+.lesson-complete-button {
+  background: rgb(190, 105, 151);
+}
+
+.lesson-complete-button:hover {
+  background: rgb(161, 76, 124);
+}
+
 .vocabulary-back:focus-visible,
 .save-word-button:focus-visible,
+.word-navigation button:focus-visible,
 .start-quiz-button:focus-visible,
-.word-navigation button:focus-visible {
-  outline: 3px solid rgb(121, 82, 179);
+.lesson-complete-button:focus-visible {
+  outline: 3px solid rgb(190, 163, 224);
   outline-offset: 3px;
 }
 
-.start-quiz-button:disabled {
-  background-color: rgb(121, 82, 179);
-  cursor: default;
-  opacity: 0.75;
+/* Mobile */
+@media (max-width: 600px) {
+  .vocabulary-page {
+    padding: 22px 15px 40px;
+  }
+
+  .vocabulary-page > h1 {
+    font-size: 31px;
+  }
+
+  .vocabulary-intro {
+    font-size: 14px;
+  }
+
+  .vocabulary-card {
+    padding: 28px 18px;
+    border-radius: 19px;
+  }
+
+  .vocabulary-card > h2 {
+    font-size: 34px;
+  }
+
+  .pronunciation {
+    font-size: 17px;
+  }
+
+  .meaning-box h3 {
+    font-size: 21px;
+  }
+}
+
+.vocabulary-selector {
+  max-width: 750px;
+  margin: 30px auto;
+  padding: 22px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(229, 219, 242);
+  border-radius: 18px;
+}
+
+.selector-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.selector-heading h3 {
+  margin: 0;
+  color: rgb(62, 43, 95);
+  font-size: 17px;
+}
+
+.selector-heading span {
+  color: rgb(126, 111, 146);
+  font-size: 13px;
+}
+
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.word-select-button {
+  padding: 10px 16px;
+  background: rgb(248, 245, 252);
+  color: rgb(92, 67, 130);
+  border: 1px solid rgb(225, 215, 240);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.word-select-button:hover {
+  background: rgb(240, 233, 250);
+}
+
+.word-select-button.active {
+  background: rgb(112, 76, 170);
+  color: rgb(255, 255, 255);
+  border-color: rgb(112, 76, 170);
+}
+
+.example-sentence-box {
+  margin: 25px 0;
+  padding: 22px 18px;
+  background: rgb(250, 246, 253);
+  border: 1px solid rgb(229, 219, 242);
+  border-radius: 16px;
+}
+
+.example-label {
+  margin: 0 0 14px;
+  color: rgb(151, 83, 139);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.example-sentence-box h3 {
+  margin: 0;
+  color: rgb(62, 43, 95);
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.example-pronunciation {
+  margin: 12px 0;
+  color: rgb(126, 86, 174);
+  font-size: 14px;
+}
+
+.example-translation {
+  color: rgb(100, 88, 116);
+  font-size: 15px;
+  line-height: 1.5;
 }
