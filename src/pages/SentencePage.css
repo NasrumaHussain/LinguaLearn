@@ -1,0 +1,378 @@
+
+.sentence-page {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 35px 24px 60px;
+  text-align: center;
+}
+
+/* Back button */
+.sentence-back {
+  display: block;
+  padding: 10px 16px;
+  background: rgb(255, 255, 255);
+  color: rgb(92, 67, 130);
+  border: 1px solid rgb(225, 215, 240);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Heading */
+.sentence-label {
+  margin-top: 38px;
+  color: rgb(151, 83, 139);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sentence-page > h1 {
+  color: rgb(62, 43, 95);
+  font-size: 38px;
+  margin: 12px 0;
+}
+
+.sentence-intro {
+  color: rgb(119, 109, 134);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Categories */
+.sentence-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px auto;
+}
+
+.sentence-categories button {
+  padding: 10px 17px;
+  background: rgb(255, 255, 255);
+  color: rgb(92, 67, 130);
+  border: 1px solid rgb(225, 215, 240);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.sentence-categories button:hover {
+  background: rgb(240, 233, 250);
+}
+
+.sentence-categories button.active {
+  background: rgb(112, 76, 170);
+  color: rgb(255, 255, 255);
+  border-color: rgb(112, 76, 170);
+}
+
+/* Translation */
+.sentence-meaning {
+  padding: 22px 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(225, 215, 240, 0.65);
+  border-radius: 16px;
+}
+
+.sentence-meaning span {
+  color: rgb(151, 83, 139);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sentence-meaning h3 {
+  color: rgb(62, 43, 95);
+  font-size: 21px;
+  margin: 12px 0 0;
+}
+
+/* Sentence list */
+
+.sentence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 30px;
+}
+
+.sentence-category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sentence-category-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 21px;
+  color: rgb(42, 75, 55);
+}
+
+.sentence-category-heading span {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgb(120, 130, 120);
+  background: rgba(100, 150, 100, 0.12);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.sentence-category-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sentence-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 232, 224);
+  border-radius: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sentence-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+}
+
+.sentence-row-number {
+  min-width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(120, 170, 110, 0.15);
+  color: rgb(65, 120, 75);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sentence-row-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.sentence-row-content h3 {
+  margin: 0 0 7px;
+  font-size: 19px;
+  color: rgb(40, 55, 45);
+}
+
+.sentence-pronunciation {
+  margin: 0 0 6px;
+  color: rgb(115, 125, 115);
+  font-size: 14px;
+}
+
+.sentence-row-content .sentence-meaning {
+  margin: 0;
+  color: rgb(65, 85, 70);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsive layout */
+
+@media (max-width: 600px) {
+  .sentence-row {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .sentence-row-content h3 {
+    font-size: 17px;
+  }
+
+  .sentence-category-heading {
+    font-size: 19px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .sentence-page {
+    padding: 22px 15px 40px;
+  }
+
+  .sentence-page > h1 {
+    font-size: 30px;
+  }
+
+  .sentence-card {
+    padding: 28px 18px;
+    border-radius: 19px;
+  }
+
+  .sentence-card > h2 {
+    font-size: 24px;
+  }
+
+  .sentence-meaning h3 {
+    font-size: 19px;
+  }
+}
+
+.sentence-practice-cta {
+  max-width: 650px;
+  margin: 25px auto;
+  padding: 25px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(229, 219, 242);
+  border-radius: 18px;
+}
+
+.sentence-practice-cta h3 {
+  color: rgb(62, 43, 95);
+  margin-bottom: 10px;
+}
+
+.sentence-practice-cta p {
+  color: rgb(119, 109, 134);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sentence-practice-cta button {
+  margin-top: 12px;
+  padding: 12px 20px;
+  background: rgb(112, 76, 170);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Language selector */
+
+.sentence-language-select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px auto;
+  flex-wrap: wrap;
+}
+
+.sentence-language-select label {
+  color: rgb(65, 55, 85);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sentence-language-select select {
+  padding: 10px 36px 10px 14px;
+  border: 1px solid rgb(215, 200, 235);
+  border-radius: 10px;
+  background: rgb(255, 255, 255);
+  color: rgb(65, 45, 100);
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.sentence-language-select select:focus {
+  border-color: rgb(140, 105, 190);
+}
+
+/* Category filters */
+
+.sentence-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+/* Compact sentence rows */
+
+.sentence-list {
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.sentence-category-section {
+  gap: 10px;
+}
+
+.sentence-category-heading {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.sentence-category-rows {
+  gap: 9px;
+}
+
+.sentence-row {
+  gap: 14px;
+  padding: 13px 17px;
+  border-radius: 12px;
+  align-items: flex-start;
+}
+
+.sentence-row-number {
+  min-width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.sentence-row-content h3 {
+  font-size: 21px;
+  margin: 0 0 4px;
+}
+
+.sentence-pronunciation {
+  font-size: 15px;
+  margin: 0 0 4px;
+}
+
+.sentence-row-content .sentence-meaning {
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .sentence-row {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .sentence-row-content h3 {
+    font-size: 16px;
+  }
+
+  .sentence-pronunciation,
+  .sentence-row-content .sentence-meaning {
+    font-size: 12px;
+  }
+}
+
+/* Sentence meaning */
+.sentence-row-content .sentence-meaning {
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  padding: 0;
+  margin: 4px 0 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  text-align: center;
+  line-height: 1.5;
+}
