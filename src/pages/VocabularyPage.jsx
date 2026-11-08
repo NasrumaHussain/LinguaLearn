@@ -6,7 +6,7 @@ function VocabularyPage({ language, lesson, onBack,
    onComplete, savedWords, onToggleSave}) {
 
    const vocabulary = {
-    Korean: {
+    Korean: { 
       Greetings: [
         {
           word: "안녕하세요",
