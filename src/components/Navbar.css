@@ -3,40 +3,122 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  padding: 20px 5%;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(235, 224, 244);
+  gap: 30px;
+  padding: 16px 6%;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid rgb(233, 225, 244);
+  box-shadow: 0 3px 15px rgba(70, 48, 105, 0.05);
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+}
+.navbar-brand-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .brand {
-  background: none;
+  background:  transparent;
   border: none;
-  color: rgb(65, 43, 95);
-  font-size: 25px;
-  font-weight: bold;
+  color: rgb(62, 43, 95);
+  font-size: 27px;
+  font-weight: 750;
+  letter-spacing: -0.8px;
   cursor: pointer;
+   text-align: left;
 }
 
 .brand span {
-  color: rgb(210, 115, 160);
+  color: rgb(218, 117, 168);
 }
 
 .navbar-tagline {
-  color: rgb(105, 96, 117);
+  color: rgb(126, 111, 146);
+  font-size: 12px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.navbar-link,
+.profile-button {
+  background: transparent;
+  border: none;
+  color: rgb(91, 76, 115);
   font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 9px 3px;
+  transition: color 0.2s ease;
+}
+
+.navbar-link:hover,
+.profile-button:hover {
+  color: rgb(190, 104, 157);
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  width: 180px;
+  background: white;
+  border: 1px solid rgb(233, 225, 244);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(70, 48, 105, 0.12);
+  padding: 10px;
+}
+
+.profile-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  color: rgb(91, 76, 115);
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.profile-dropdown button:hover {
+  background: rgb(247, 242, 252);
+}
+
+.profile-dropdown p {
+  font-size: 11px;
+  color: rgb(145, 132, 160);
+  padding: 5px 10px;
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 }
 
 @media (max-width: 500px) {
-  .navbar {
-    padding: 16px 5%;
-  }
-
   .brand {
-    font-size: 21px;
+    font-size: 24px;
   }
 
-  .navbar-tagline {
+  .navbar-link,
+  .profile-button {
     font-size: 12px;
   }
 }
