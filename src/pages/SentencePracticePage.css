@@ -1,0 +1,200 @@
+
+.sentence-practice-page {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 35px 24px 60px;
+  text-align: center;
+}
+
+.practice-back {
+  display: block;
+  padding: 10px 16px;
+  background: rgb(255, 255, 255);
+  color: rgb(92, 67, 130);
+  border: 1px solid rgb(225, 215, 240);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.practice-label {
+  margin-top: 38px;
+  color: rgb(151, 83, 139);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sentence-practice-page > h1 {
+  color: rgb(62, 43, 95);
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.practice-intro {
+  color: rgb(119, 109, 134);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.practice-card,
+.practice-result {
+  width: 100%;
+  max-width: 650px;
+  margin: 35px auto;
+  padding: 35px;
+  background: linear-gradient(
+    145deg,
+    rgb(246, 241, 253),
+    rgb(255, 241, 247)
+  );
+  border: 1px solid rgb(229, 219, 242);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(80, 55, 120, 0.07);
+}
+
+.practice-progress {
+  color: rgb(126, 111, 146);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.practice-progress-track {
+  width: 100%;
+  height: 8px;
+  margin: 15px 0 30px;
+  background: rgb(225, 215, 240);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.practice-progress-fill {
+  height: 100%;
+  background: rgb(112, 76, 170);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.practice-instruction {
+  color: rgb(119, 109, 134);
+  font-size: 14px;
+}
+
+.practice-card > h2 {
+  color: rgb(62, 43, 95);
+  font-size: 29px;
+  line-height: 1.6;
+  margin: 18px 0 8px;
+}
+
+.practice-pronunciation {
+  color: rgb(126, 86, 174);
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.practice-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.practice-options button {
+  padding: 15px;
+  background: rgb(255, 255, 255);
+  color: rgb(62, 43, 95);
+  border: 1px solid rgb(225, 215, 240);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.practice-options button:hover:not(:disabled) {
+  border-color: rgb(112, 76, 170);
+  background: rgb(248, 244, 253);
+}
+
+.practice-options button:disabled {
+  cursor: default;
+}
+
+.practice-options button.correct {
+  background: rgb(226, 245, 232);
+  border-color: rgb(104, 177, 125);
+  color: rgb(38, 112, 62);
+}
+
+.practice-options button.incorrect {
+  background: rgb(255, 232, 234);
+  border-color: rgb(220, 119, 130);
+  color: rgb(160, 48, 62);
+}
+
+.practice-feedback {
+  margin-top: 25px;
+}
+
+.practice-feedback p {
+  color: rgb(92, 67, 130);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.practice-feedback button,
+.practice-result button {
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: rgb(112, 76, 170);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.practice-feedback button:hover,
+.practice-result button:hover {
+  background: rgb(88, 59, 137);
+}
+
+.practice-result h2 {
+  color: rgb(62, 43, 95);
+}
+
+.practice-result > p {
+  color: rgb(119, 109, 134);
+  line-height: 1.6;
+}
+
+.practice-result strong {
+  display: block;
+  margin: 18px 0;
+  color: rgb(112, 76, 170);
+  font-size: 42px;
+}
+
+@media (max-width: 600px) {
+  .sentence-practice-page {
+    padding: 22px 15px 40px;
+  }
+
+  .sentence-practice-page > h1 {
+    font-size: 29px;
+  }
+
+  .practice-card,
+  .practice-result {
+    padding: 25px 18px;
+  }
+
+  .practice-card > h2 {
+    font-size: 24px;
+  }
+
+  .practice-options {
+    grid-template-columns: 1fr;
+  }
+}
