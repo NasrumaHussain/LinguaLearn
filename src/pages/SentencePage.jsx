@@ -1,12 +1,7 @@
 import { useState } from "react";
 import "./SentencePage.css";
-
-function SentencePage({ language, onBack, onPractice }) {
-  const [selectedLanguage, setSelectedLanguage] = useState(language || "Korean");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
   
-const sentences = {
+export const sentences = {
   Korean: [
     // Daily Conversations
     { sentence: "뭐 하고 있어요?", pronunciation: "Mwo hago isseoyo?", meaning: "What are you doing?", category: "Daily Conversations" },
@@ -168,7 +163,10 @@ const sentences = {
   ]
 };
 
-
+function SentencePage({ language, onBack, onPractice }) {
+  const [selectedLanguage, setSelectedLanguage] = useState(language || "Korean");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  
   const languageSentences = sentences[selectedLanguage] || sentences.Korean;
 
   const categories = [
