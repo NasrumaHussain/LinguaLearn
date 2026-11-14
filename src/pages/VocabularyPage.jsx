@@ -782,7 +782,7 @@ function VocabularyPage({ language, lesson, onBack,
   const [currentWord, setCurrentWord] = useState(0);
   const word = words[currentWord];
 
-    const isSaved = savedWords.some(
+    const isSaved = (savedWords || []).some(
       (item) => 
         item.word === word.word &&
         item.language === language &&
