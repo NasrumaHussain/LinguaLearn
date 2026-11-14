@@ -1,6 +1,6 @@
 
 .progress-card {
- width: 100%;
+  width: 100%;
   max-width: 650px;
   margin: 18px auto;
   padding: 14px 22px;
@@ -22,8 +22,7 @@
 }
 
 .progress-label {
-  margin: 0 0 8px;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
   color: rgb(157, 65, 130);
   font-size: 12px;
   font-weight: 700;
@@ -33,7 +32,7 @@
 .progress-card h2 {
   margin: 0;
   color: rgb(57, 42, 91);
-  font-size: 17x;
+  font-size: 17px;
   font-weight: 600;
 }
 
