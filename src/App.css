@@ -15,7 +15,7 @@ body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
-  padding: 30px 5%;
+  padding: 12px 5%;
   text-align: center;
   background-color: rgb(249, 247, 253);
 }
@@ -206,7 +206,7 @@ h1 {
   }
 
   .hero-section {
-    margin-top: 30px;
+    margin-top: 0px;
   }
 
   .hero-section h1 {
