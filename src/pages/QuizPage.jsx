@@ -1,7 +1,6 @@
-
 import { useState } from "react";
 import "./QuizPage.css";
- 
+
 function shuffleArray(items) {
   const shuffled = [...items];
 
@@ -44,6 +43,18 @@ function QuizPage({ language, lesson, words, onBack }) {
   const [showFeedback, setShowFeedback] = useState(false);
 
   const question = quiz[currentQuestion];
+
+  if (quiz.length === 0) {
+  return (
+    <div className="quiz-page">
+      <button className="quiz-back" onClick={onBack}>
+        ← Back to Vocabulary
+      </button>
+      <h1>No vocabulary available</h1>
+      <p>There are no words available for this quiz yet.</p>
+    </div>
+  );
+}
 
   function checkAnswer() {
     if (!selectedAnswer) return;
