@@ -2,10 +2,8 @@ import { useState } from "react";
 import "./VocabularyPage.css";
 import QuizPage from "./QuizPage";
 
-function VocabularyPage({ language, lesson, onBack,
-   onComplete, savedWords, onToggleSave}) {
 
-   const vocabulary = {
+  export const vocabulary = {
     Korean: { 
       Greetings: [
         {
@@ -190,7 +188,7 @@ function VocabularyPage({ language, lesson, onBack,
           pronunciation: "Shuprobhat",
           meaning: "Good morning",
           exampleSentence: "সুপ্রভাত, আপনার দিনটি ভালো কাটুক।",
-          sentencePronunciation: "Shuprobhat, apnar dintি bhalo katuk.",
+          sentencePronunciation: "Shuprobhat, apnar dinti bhalo katuk.",
           sentenceMeaning: "Good morning, have a nice day."
         },
         {
@@ -776,7 +774,8 @@ function VocabularyPage({ language, lesson, onBack,
       ]
     },
   };
-
+function VocabularyPage({ language, lesson, onBack,
+   onComplete, savedWords, onToggleSave}) {
   const languageVocabulary = vocabulary[language] || vocabulary.Korean;
   const words = languageVocabulary[lesson] || languageVocabulary.Greetings;
   const [showQuiz, setShowQuiz] = useState(false);
@@ -795,6 +794,7 @@ function VocabularyPage({ language, lesson, onBack,
     <QuizPage
       language={language}
       lesson={lesson}
+       words={Object.values(languageVocabulary).flat()}
       onBack={() => setShowQuiz(false)}
     />
   );
@@ -851,7 +851,7 @@ function VocabularyPage({ language, lesson, onBack,
         </button>
 
         <div className="meaning-box">
-          <div className="meaning-box">
+          
             <span>Meaning</span>
             <h3>{word.meaning}</h3>
           </div>
