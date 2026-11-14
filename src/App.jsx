@@ -9,6 +9,7 @@ import DashboardPage from "./pages/DashboardPage";
 import SentencePage from "./pages/SentencePage";
 import SentencePracticePage from "./pages/SentencePracticePage";
 import SentenceLanguagePage from "./pages/SentenceLanguagePage";
+import PracticePage from "./pages/PracticePage";
 
 function App() {
   const languages = [
@@ -27,6 +28,7 @@ function App() {
   const [showSentencePractice, setShowSentencePractice] = useState(false);
   const [practiceLanguage, setPracticeLanguage] = useState("Korean");
   const [showSentenceLanguage, setShowSentenceLanguage] = useState(false);
+const [showPractice, setShowPractice] = useState(false);
 
   const [completedLessons, setCompletedLessons] = useState([]);
 
@@ -73,6 +75,8 @@ function App() {
     setShowSentences(false);
     setShowSentencePractice(false);
     setShowSentenceLanguage(false);
+    setShowPractice(false);
+  
   }
 
   function openSentenceLearning() {
@@ -89,14 +93,23 @@ function App() {
   setShowSentences(false);
   setShowSentencePractice(true);
   }
-
+function openPractice() {
+  setShowPractice(true);
+  setShowLessons(false);
+  setShowSavedWords(false);
+  setShowDashboard(false);
+  setShowSentences(false);
+  setShowSentencePractice(false);
+  setShowSentenceLanguage(false);
+}
   if (showSentenceLanguage) {
     return (
       <>
         <Navbar
           onHome={goHome}
           onDashboard={() => setShowDashboard(true)}
-          onSavedWords={() => setShowSavedWords(true)}
+          onLearn={goHome}
+          onPractice={openPractice}
         />
 
         <SentenceLanguagePage
@@ -114,7 +127,12 @@ function App() {
   if (showSentencePractice) {
     return (
       <>
-        <Navbar onHome={goHome} />
+        <Navbar
+          onHome={goHome}
+          onSavedWords={openSavedWords}
+          onLearn={goHome}
+          onPractice={openPractice}
+        />
 
         <SentencePracticePage
           language={practiceLanguage}
@@ -132,6 +150,9 @@ function App() {
       <>
         <Navbar
           onHome={goHome}
+          onSavedWords={openSavedWords}
+          onLearn={goHome}
+          onPractice={openPractice}
         />
         <SentencePage
           language={selectedLanguage || "Korean"}
@@ -147,6 +168,9 @@ function App() {
       <>
         <Navbar
           onHome={goHome}
+          onSavedWords={openSavedWords}
+          onLearn={goHome}
+          onPractice={openPractice}
         />
         <DashboardPage
           selectedLanguage={selectedLanguage}
@@ -167,6 +191,9 @@ function App() {
       <>
         <Navbar
           onHome={goHome}
+          onSavedWords={openSavedWords}
+          onLearn={goHome}
+          onPractice={openPractice}
         />
 
         <SavedWordsPage
@@ -196,10 +223,26 @@ function App() {
     );
   }
 
+  if (showPractice) {
+    return (
+      <>
+        <Navbar
+          onHome={goHome}
+          onLearn={goHome}
+          onPractice={openPractice}
+        />
+
+        <PracticePage onBack={goHome} />
+      </>
+    );
+  }
+
   return (
     <>
       <Navbar
         onHome={goHome}
+        onLearn={goHome}
+        onPractice={openPractice}
       />
       <div className="home-actions">
 
@@ -212,14 +255,14 @@ function App() {
 
         <button
           className="dashboard-nav-button"
-          onClick={() => setShowDashboard(true)}
+          onClick={openDashboard}
         >
           My Dashboard
         </button>
 
         <button
           className="saved-nav-button"
-          onClick={() => setShowSavedWords(true)}
+          onClick={openSavedWords}
         >
           ♡ My Saved Words ({savedWords.length})
         </button>
@@ -280,5 +323,8 @@ function App() {
     </>
   );
 }
+
+export default App;
+          
 
 export default App;
