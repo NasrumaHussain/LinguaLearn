@@ -1,0 +1,302 @@
+.practice-page {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 35px 24px 70px;
+  color: rgb(62, 43, 95);
+}
+
+.practice-back-button {
+  background: transparent;
+  border: none;
+  color: rgb(112, 91, 143);
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 35px;
+}
+
+.practice-intro,
+.practice-result-card {
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.practice-label {
+  color: rgb(190, 104, 157);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 2px;
+}
+
+.practice-intro h1,
+.practice-result-card h1 {
+  font-size: 34px;
+  margin: 12px 0;
+}
+
+.practice-description,
+.practice-result-card > p {
+  color: rgb(126, 111, 146);
+  line-height: 1.7;
+}
+
+.practice-setup-card,
+.practice-quiz-card,
+.practice-result-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(233, 225, 244);
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(70, 48, 105, 0.07);
+  padding: 32px;
+}
+
+.practice-setup-card {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.practice-setup-card label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 650;
+}
+
+.practice-setup-card select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid rgb(220, 208, 237);
+  border-radius: 10px;
+  background: rgb(250, 247, 253);
+  color: rgb(62, 43, 95);
+  font-size: 15px;
+}
+
+.practice-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.practice-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 17px 8px;
+  border-radius: 12px;
+  background: rgb(248, 243, 252);
+  text-align: center;
+}
+
+.practice-info strong {
+  font-size: 23px;
+  color: rgb(151, 91, 174);
+}
+
+.practice-info span {
+  font-size: 11px;
+  color: rgb(126, 111, 146);
+}
+
+.start-practice-button,
+.practice-quiz-bottom button {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 20px;
+  background: rgb(133, 94, 171);
+  color: white;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.start-practice-button {
+  width: 100%;
+}
+
+.start-practice-button:hover,
+.practice-quiz-bottom button:hover {
+  background: rgb(108, 73, 147);
+}
+
+.practice-quiz-card {
+  max-width: 720px;
+  margin: 20px auto;
+}
+
+.practice-quiz-top,
+.practice-quiz-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  color: rgb(126, 111, 146);
+  font-size: 13px;
+}
+
+.practice-progress-track {
+  height: 8px;
+  background: rgb(239, 231, 247);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 18px 0 28px;
+}
+
+.practice-progress-fill {
+  height: 100%;
+  background: rgb(190, 125, 183);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.question-type {
+  display: inline-block;
+  padding: 7px 12px;
+  background: rgb(247, 239, 250);
+  color: rgb(151, 91, 174);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.practice-quiz-card h2 {
+  font-size: 32px;
+  margin: 22px 0 8px;
+  text-align: center;
+  color: rgb(71, 51, 113);
+}
+
+.practice-pronunciation {
+  text-align: center;
+  color: rgb(105, 85, 130);
+  margin-bottom: 30px;
+}
+
+.practice-question {
+  font-size: 15px;
+  font-weight: 650;
+  margin-bottom: 15px;
+}
+
+.practice-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  color: rgb(45, 35, 65);
+}
+
+.practice-option {
+  min-height: 58px;
+  padding: 13px;
+  border: 1px solid rgb(226, 217, 238);
+  border-radius: 11px;
+  background: rgb(250, 248, 253);
+  color: rgb(91, 76, 115);
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.practice-option:hover:not(:disabled) {
+  border-color: rgb(177, 135, 201);
+  background: rgb(246, 239, 251);
+}
+
+.practice-option.correct {
+  border-color: rgb(93, 166, 125);
+  background: rgb(232, 247, 237);
+  color: rgb(44, 112, 73);
+}
+
+.practice-option.incorrect {
+  border-color: rgb(210, 112, 125);
+  background: rgb(253, 237, 239);
+  color: rgb(157, 58, 73);
+}
+
+.practice-option:disabled {
+  cursor: default;
+}
+
+.practice-feedback {
+  margin-top: 20px;
+  padding: 13px;
+  border-radius: 10px;
+  background: rgb(247, 243, 251);
+  color: rgb(91, 76, 115);
+  font-size: 14px;
+}
+
+.practice-quiz-bottom {
+  margin-top: 25px;
+}
+
+.practice-quiz-bottom button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.practice-final-score {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 30px auto;
+  padding: 25px;
+  background: rgb(248, 243, 252);
+  border-radius: 15px;
+}
+
+.practice-final-score strong {
+  font-size: 38px;
+  color: rgb(151, 91, 174);
+}
+
+.practice-final-score span {
+  color: rgb(126, 111, 146);
+  font-size: 13px;
+}
+
+.change-language-button {
+  display: block;
+  margin: 15px auto 0;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  color: rgb(126, 91, 155);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .practice-page {
+    padding: 25px 15px 50px;
+  }
+
+  .practice-intro h1,
+  .practice-result-card h1 {
+    font-size: 27px;
+  }
+
+  .practice-setup-card,
+  .practice-quiz-card,
+  .practice-result-card {
+    padding: 22px 17px;
+  }
+
+  .practice-info {
+    gap: 7px;
+  }
+
+  .practice-info span {
+    font-size: 10px;
+  }
+
+  .practice-options {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-quiz-card h2 {
+    font-size: 27px;
+  }
+}
