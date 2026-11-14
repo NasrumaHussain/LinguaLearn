@@ -28,7 +28,7 @@ function App() {
   const [showSentencePractice, setShowSentencePractice] = useState(false);
   const [practiceLanguage, setPracticeLanguage] = useState("Korean");
   const [showSentenceLanguage, setShowSentenceLanguage] = useState(false);
-const [showPractice, setShowPractice] = useState(false);
+  const [showPractice, setShowPractice] = useState(false);
 
   const [completedLessons, setCompletedLessons] = useState([]);
 
@@ -76,7 +76,24 @@ const [showPractice, setShowPractice] = useState(false);
     setShowSentencePractice(false);
     setShowSentenceLanguage(false);
     setShowPractice(false);
-  
+  }
+
+  function openSavedWords() {
+  setShowDashboard(false);
+  setShowSavedWords(true);
+  setShowLessons(false);
+  setShowSentences(false);
+  setShowSentencePractice(false);
+  setShowSentenceLanguage(false);
+  }
+
+  function openDashboard() {
+    setShowDashboard(true);
+    setShowSavedWords(false);
+    setShowLessons(false);
+    setShowSentences(false);
+    setShowSentencePractice(false);
+    setShowSentenceLanguage(false);
   }
 
   function openSentenceLearning() {
@@ -93,7 +110,8 @@ const [showPractice, setShowPractice] = useState(false);
   setShowSentences(false);
   setShowSentencePractice(true);
   }
-function openPractice() {
+
+  function openPractice() {
   setShowPractice(true);
   setShowLessons(false);
   setShowSavedWords(false);
@@ -102,12 +120,13 @@ function openPractice() {
   setShowSentencePractice(false);
   setShowSentenceLanguage(false);
 }
+
   if (showSentenceLanguage) {
     return (
       <>
         <Navbar
           onHome={goHome}
-          onDashboard={() => setShowDashboard(true)}
+          onSavedWords={openSavedWords}
           onLearn={goHome}
           onPractice={openPractice}
         />
@@ -323,8 +342,5 @@ function openPractice() {
     </>
   );
 }
-
-export default App;
-          
 
 export default App;
