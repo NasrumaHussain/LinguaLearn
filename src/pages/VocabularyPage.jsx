@@ -2,9 +2,8 @@ import { useState } from "react";
 import "./VocabularyPage.css";
 import QuizPage from "./QuizPage";
 
-
   export const vocabulary = {
-    Korean: { 
+    Korean: {
       Greetings: [
         {
           word: "안녕하세요",
@@ -188,7 +187,7 @@ import QuizPage from "./QuizPage";
           pronunciation: "Shuprobhat",
           meaning: "Good morning",
           exampleSentence: "সুপ্রভাত, আপনার দিনটি ভালো কাটুক।",
-          sentencePronunciation: "Shuprobhat, apnar dinti bhalo katuk.",
+          sentencePronunciation: "Shuprobhat, apnar dintি bhalo katuk.",
           sentenceMeaning: "Good morning, have a nice day."
         },
         {
@@ -774,15 +773,17 @@ import QuizPage from "./QuizPage";
       ]
     },
   };
-function VocabularyPage({ language, lesson, onBack,
+
+  function VocabularyPage({ language, lesson, onBack,
    onComplete, savedWords, onToggleSave}) {
+
   const languageVocabulary = vocabulary[language] || vocabulary.Korean;
   const words = languageVocabulary[lesson] || languageVocabulary.Greetings;
   const [showQuiz, setShowQuiz] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
   const word = words[currentWord];
 
-    const isSaved = (savedWords || []).some(
+    const isSaved = savedWords.some(
       (item) => 
         item.word === word.word &&
         item.language === language &&
@@ -792,11 +793,11 @@ function VocabularyPage({ language, lesson, onBack,
   if (showQuiz) {
   return (
     <QuizPage
-      language={language}
-      lesson={lesson}
-       words={Object.values(languageVocabulary).flat()}
-      onBack={() => setShowQuiz(false)}
-    />
+    language={language}
+    lesson={lesson}
+    words={Object.values(languageVocabulary).flat()}
+    onBack={() => setShowQuiz(false)}
+  />
   );
 }
 
@@ -851,10 +852,9 @@ function VocabularyPage({ language, lesson, onBack,
         </button>
 
         <div className="meaning-box">
-          
             <span>Meaning</span>
             <h3>{word.meaning}</h3>
-          </div>
+        </div>
           {word.exampleSentence && (
           <div className="example-sentence-box">
             <p className="example-label">IN A SENTENCE</p>
@@ -869,8 +869,7 @@ function VocabularyPage({ language, lesson, onBack,
               {word.sentenceMeaning}
             </p>
           </div>
-        )}
-        </div>
+        )}     
 
         <div className="word-navigation">
           <button
