@@ -44,7 +44,7 @@ h1 {
   flex-wrap: wrap;
   gap: 22px;
   max-width: 1150px;
-  margin: 65px auto 20px;
+  margin: 35px auto 20px;
 }
 
 .language-card {
@@ -172,10 +172,6 @@ h1 {
   margin: 0;
   line-height: 1.5;
   font-size: 21px;
-}
-
-.language-container {
-  margin-top: 35px;
 }
 
 .sentence-nav-button {
